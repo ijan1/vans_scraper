@@ -1,0 +1,11 @@
+#!/bin/bash
+export BEEP=/usr/share/sounds/freedesktop/stereo/phone-incoming-call.oga
+alias beep='paplay $BEEP'
+while true; do
+	scrapy crawl checkers 2> whatever.log && 
+		if grep -q 'has shoes' "shoes"; then
+			echo "there are shoes" 
+			paplay $BEEP
+		fi
+		sleep 300
+	done
