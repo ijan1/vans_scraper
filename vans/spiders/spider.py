@@ -14,7 +14,7 @@ class VansSpider(scrapy.Spider):
         stock = response.xpath('//body').get()
         stock = re.sub("<body><p>|</p></body>", "", stock)
         stock = re.sub(",\"attr.*", "}", stock)
-       # with open('shoes.json', 'w') as f:
-       #     f.write(stock)
+        with open('i_need_this.json', 'w') as f:
+            f.write(stock)
         stock = json.loads(stock)
         yield stock
